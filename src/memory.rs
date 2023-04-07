@@ -6,10 +6,11 @@ use crate::error::QuetzalError;
 #[derive(Clone, Debug)]
 pub struct Stack {
     frames: Vec<HashMap<usize, Variable>>,
+    temp: Vec<Variable>, //holds temporary values, ie during computation of expressions
 }
 impl Stack {
     pub fn new() -> Self {
-        Stack {frames: Vec::new()} 
+        Stack {frames: Vec::new(), temp: Vec::with_capacity(3)} 
     }
 
     /// Searches for the id starting from the top frame.
