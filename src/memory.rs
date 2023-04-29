@@ -61,7 +61,6 @@ impl Stack {
             Ok(())
         }
     }
-
 }
 
 
@@ -73,7 +72,7 @@ impl Stack {
 
 
 
-#[derive(Clone, Debug)]
+#[derive(Clone, Debug, PartialEq)]
 pub enum Variable {
 
     //simple types
