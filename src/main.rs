@@ -1,6 +1,7 @@
 mod memory;
 mod alu;
 mod error;
+mod compiler;
 #[cfg(test)]
 mod tests;
 
