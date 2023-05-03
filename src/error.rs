@@ -9,6 +9,7 @@ pub enum QuetzalError {
     InputFileNotFound,
     OutputFileNotCreated,
     BadFileRead(String),
+    NotEnoughBits,
 }
 impl std::error::Error for QuetzalError {}
 impl fmt::Display for QuetzalError {
@@ -19,7 +20,8 @@ impl fmt::Display for QuetzalError {
             Self::ExcessiveStackSize => write!(f, "Tried to push a new frame onto the stack but the stack was too large, stack overflow."),
             Self::InputFileNotFound => write!(f, "Couldn't find the provided file."),
             Self::OutputFileNotCreated => write!(f, "Couldn't create the specified file."),
-            Self::BadFileRead(file) => write!(f, "Ran into a problem reading the file '{}'", file),
+            Self::BadFileRead(file) => write!(f, "Ran into a problem reading the file '{}'.", file),
+            Self::NotEnoughBits => write!(f, "Couldn't push the number of bits specified."),
         }
     }
 }
